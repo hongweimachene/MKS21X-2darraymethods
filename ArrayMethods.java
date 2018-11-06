@@ -19,4 +19,27 @@ public class ArrayMethods {
     }
     return sum;
   }
+
+  public static int[] allRowSums(int[][] ary) {
+    int[] arySum = new int[ary.length];
+    for (int i = 0; i < ary.length; i++) {
+      arySum[i]=rowSum(ary, i);
+    }
+    return arySum;
+  }
+
+  public static int[] allColSums(int[][] ary) {
+    int maxLen = 0;
+    for (int i = 0; i < ary.length; i++) {
+      if (ary[i].length > maxLen) {
+        maxLen = ary[i].length;
+      }
+    }
+    int[] arySum = new int[maxLen];
+    for (int j = 0; j < maxLen; j++) {
+      arySum[j]=columnSum(ary, j);
+    }
+    return arySum;
+  }
+
 }
